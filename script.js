@@ -1,15 +1,8 @@
 // Data Siswa (Ganti bagian ini dengan data dari Excel Anda)
 const dataSiswa = [
-    {
-    "NAMA": "Achmad syabirin",
-    "NISN": "123456",
-    "STATUS": "LULUS"
-  },
-  {
-    "NAMA": "Ita",
-    "NISN": "654321",
-    "STATUS": "TIDAK LULUS"
-  }
+    { nama: "BUDI SANTOSO", nisn: "1234567890", status: "LULUS" },
+    { nama: "SITI AMINAH", nisn: "0987654321", status: "LULUS" },
+    { nama: "ANDI WIJAYA", nisn: "1122334455", status: "TIDAK LULUS"
 ];
 
 function cekKelulusan() {
