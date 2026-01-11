@@ -1,26 +1,28 @@
-// Data Siswa (Ganti bagian ini dengan data dari Excel Anda)
+// PASTIKAN NAMA DI SINI HURUF KAPITAL SEMUA
 const dataSiswa = [
     { nama: "BUDI SANTOSO", nisn: "1234567890", status: "LULUS" },
     { nama: "SITI AMINAH", nisn: "0987654321", status: "LULUS" },
-    { nama: "ANDI WIJAYA", nisn: "1122334455", status: "TIDAK LULUS"
+    { nama: "ANDI WIJAYA", nisn: "1122334455", status: "TIDAK LULUS" }
 ];
 
 function cekKelulusan() {
-    const namaInput = document.getElementById('inputNama').value.toUpperCase();
-    const nisnInput = document.getElementById('inputNisn').value;
+    // .trim() menghapus spasi yang tidak sengaja terketik di awal/akhir
+    const namaInput = document.getElementById('inputNama').value.toUpperCase().trim();
+    const nisnInput = document.getElementById('inputNisn').value.trim();
+    
     const resultDiv = document.getElementById('result');
     const resultContent = document.getElementById('resultContent');
 
-    // Validasi Input Kosong
     if (namaInput === "" || nisnInput === "") {
-        alert("Silakan masukkan Nama dan NISN terlebih dahulu!");
+        alert("Silakan masukkan Nama dan NISN!");
         return;
     }
 
-    // Cari data yang cocok
-    const siswa = dataSiswa.find(s => s.nama === namaInput && s.nisn === nisnInput);
+    // Cari data
+    const siswa = dataSiswa.find(s => 
+        s.nama === namaInput && s.nisn === nisnInput
+    );
 
-    // Tampilkan Hasil
     resultDiv.classList.remove('hidden');
     document.querySelector('.card').classList.add('hidden');
 
@@ -37,7 +39,10 @@ function cekKelulusan() {
     } else {
         resultContent.innerHTML = `
             <h4 style="color: #e74c3c">Data Tidak Ditemukan</h4>
-            <p>Mohon periksa kembali Nama dan NISN yang Anda masukkan.</p>
+            <p>Pastikan Nama & NISN sesuai dengan data sekolah.</p>
+            <p style="font-size: 11px; color: gray; margin-top: 10px;">
+                Tips: Coba ketik nama dengan huruf kapital semua.
+            </p>
         `;
     }
 }
