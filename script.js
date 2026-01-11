@@ -3,12 +3,12 @@ const dataSiswa = [
     {
     "NAMA": "Achmad syabirin",
     "NISN": "123456",
-    "KETERANGAN": "LULUS"
+    "STATUS": "LULUS"
   },
   {
     "NAMA": "Ita",
     "NISN": "654321",
-    "KETERANGAN": "TIDAK LULUS"
+    "STATUS": "TIDAK LULUS"
   }
 ];
 
