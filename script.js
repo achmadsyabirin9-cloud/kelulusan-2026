@@ -1,8 +1,9 @@
 // PASTIKAN NAMA DI SINI HURUF KAPITAL SEMUA
+// Tambahkan properti 'peringkat' pada setiap data siswa
 const dataSiswa = [
-    { nama: "BUDI SANTOSO", nisn: "1234567890", status: "LULUS" },
-    { nama: "SITI AMINAH", nisn: "0987654321", status: "LULUS" },
-    { nama: "ANDI WIJAYA", nisn: "1122334455", status: "TIDAK LULUS" }
+    { nama: "BUDI SANTOSO", nisn: "1234567890", status: "LULUS", peringkat: "5" },
+    { nama: "SITI AMINAH", nisn: "0987654321", status: "LULUS", peringkat: "2" },
+    { nama: "ANDI WIJAYA", nisn: "1122334455", status: "TIDAK LULUS", peringkat: "-" }
 ];
 
 function cekKelulusan() {
@@ -28,11 +29,16 @@ function cekKelulusan() {
 
     if (siswa) {
         let statusClass = siswa.status === "LULUS" ? "lulus" : "tidak-lulus";
+        
+        // Bagian HTML di bawah ini telah ditambahkan baris "Peringkat Eligible"
         resultContent.innerHTML = `
             <h4>Hasil Pencarian:</h4>
-            <p>Nama: <b>${siswa.nama}</b></p>
-            <p>NISN: <b>${siswa.nisn}</b></p>
-            <hr style="margin: 15px 0">
+            <div style="text-align: left; margin: 15px 0; line-height: 1.8;">
+                <p>Nama: <b>${siswa.nama}</b></p>
+                <p>NISN: <b>${siswa.nisn}</b></p>
+                <p>Peringkat Eligible: <b style="color: #180adb;">${siswa.peringkat}</b></p>
+            </div>
+            <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eee;">
             <p>Dinyatakan:</p>
             <h2 class="${statusClass}">${siswa.status}</h2>
         `;

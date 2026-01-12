@@ -21,12 +21,12 @@ body {
 }
 
 header {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .logo {
-    width: 80px;
-    margin-bottom: 10px;
+    width: 150px;
+    margin-bottom: 0.1px;
 }
 
 /* Kartu Input */
